@@ -33,6 +33,7 @@ source_profile = meetup-main
 ~~~
 
 Test the AWS CLI by running:
+
 ~~~
 aws --profile meetup-main ec2 describe-vpcs
 aws --profile meetup-development ec2 describe-vpcs
@@ -60,7 +61,7 @@ This will create separate workspaces in the S3 buckte to store the statefiles fo
 
 ~~~
 export TF_ENV=development; terraform workspace select $TF_ENV; terraform plan -var-file=environments/$TF_ENV/environment.tfvars -out=$TF_ENV.out
-~~
+~~~
 
 And you can the use `terraform apply development.plan`. To destroy the resources created, use:
 
